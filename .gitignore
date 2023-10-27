@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+wwwroot/lib/
+
 # User-specific files
 *.rsuser
 *.suo
@@ -361,3 +363,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/ChildrenGifts.Data/data.sqlite
+/ChildrenGifts.Data/data.sqlite-shm
+/ChildrenGifts.Data/data.sqlite-wal
+/ChildrenGifts.Client/wwwroot/lib/bootstrap
