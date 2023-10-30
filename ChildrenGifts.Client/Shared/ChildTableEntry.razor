@@ -1,0 +1,9 @@
+﻿<tr>
+    <th scope="row">@(Child.Id.ToString("D"))</th>
+    <td>@(Child.ParentFullName)</td>
+    <td>@(Child.ChildFullName)</td>
+    <td>@(Child.GetChildStatus())</td>
+    <td>@(Child.Type.GetTypeName())</td>
+    <td>@(Child.DateOfBirth.ToString("d"))</td>
+    <td>@(Child.Organization)</td>
+</tr>

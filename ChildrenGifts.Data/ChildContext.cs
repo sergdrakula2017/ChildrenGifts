@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ChildrenGifts.Data.Models;
+﻿using ChildrenGifts.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChildrenGifts.Data
+namespace ChildrenGifts.Data;
+
+public class ChildContext : DbContext
 {
-    public class ChildContext :DbContext
+    public ChildContext(DbContextOptions<ChildContext> options) : base(options)
     {
-        public required DbSet<DbChild> Children { get; set; }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+    }
+
+    public DbSet<DbChild> Children { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<DbChild>(entity =>
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<DbChild>(entity =>
-            {
-                entity.HasKey(x=>x.Id)
-            })
-        }
+            entity.HasKey(x => x.Id);
+
+            entity.HasIndex(x => x.Id);
+            entity.HasIndex(x => x.Type);
+            entity.HasIndex(x => x.FormDate);
+        });
     }
 }

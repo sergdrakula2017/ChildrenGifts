@@ -3,7 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-wwwroot/lib/
+/ChildrenGifts.Client/wwwroot/lib/
 
 # User-specific files
 *.rsuser
@@ -366,4 +366,7 @@ FodyWeavers.xsd
 /ChildrenGifts.Data/data.sqlite
 /ChildrenGifts.Data/data.sqlite-shm
 /ChildrenGifts.Data/data.sqlite-wal
-/ChildrenGifts.Client/wwwroot/lib/bootstrap
+
+/ChildrenGifts.Client/data.sqlite
+/ChildrenGifts.Client/data.sqlite-shm
+/ChildrenGifts.Client/data.sqlite-wal

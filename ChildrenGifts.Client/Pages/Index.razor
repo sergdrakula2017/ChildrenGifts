@@ -1,0 +1,27 @@
+﻿@page "/"
+@using ChildrenGifts.Data.Models
+
+
+<PageTitle>Index</PageTitle>
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">@Resources.IdColumnName</th>
+            <th scope="col">@Resources.ParentFullNameColumnName</th>
+            <th scope="col">@Resources.ChildFullNameColumnName</th>
+            <th scope="col">@Resources.StatusColumnName</th>
+            <th scope="col">@Resources.TypeColumnName</th>
+            <th scope="col">@Resources.DateOfBirthColumnName</th>
+            <th scope="col">@Resources.OrganizationColumnName</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (DbChild child in ChildContext.Children.ToArray())
+        {
+            <ChildTableEntry Child="child"/>
+        }
+        </tbody>
+    </table>
+</div>
